@@ -3,20 +3,20 @@ $(document).ready(function () {
   $("form#new-task").submit(function(event) {
     event.preventDefault();
     var inputtedDescription = $("input#new-description").val();
-    var newTask = { descript: inputtedDescription, completed: false};
+    var newTask = { descript: inputtedDescription, done: "false"};
     allTasks.push(newTask);
 
     $("ul#completed").empty();
     $("ul#uncompleted").empty();
 
     allTasks.forEach(function(task) {
-      if (task.completed === true) {
+      if (task.done === "true") {
         $("ul#completed").append("<li>" + task.descript + "</li>");
       } else {
         $("ul#uncompleted").append("<li><span class='uncompleted'>" + task.descript + "</span></li>");
         $(".uncompleted").last().click(function() {
-          task[completed] === true;
-          $("ul#completed").append("<li>" + task.descript + "</li>");
+          task.done = "true";
+          $("ul#completed").append($(this).parent());
         });
       }
     });
