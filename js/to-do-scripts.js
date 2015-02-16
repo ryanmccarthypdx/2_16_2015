@@ -14,6 +14,7 @@ $(document).ready(function () {
         $(".uncompleted").last().click(function() {
           task[completed] = true;
           $("ul#completed").append("<li>" + task.descript + "</li>");
+          
         });
       }
     });
