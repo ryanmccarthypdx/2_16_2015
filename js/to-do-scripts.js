@@ -13,10 +13,10 @@ $(document).ready(function () {
       if (task.done === "true") {
         $("ul#completed").append("<li>" + task.descript + "</li>");
       } else {
-        $("ul#uncompleted").append("<li><span class='uncompleted'>" + task.descript + "</span></li>");
+        $("ul#uncompleted").append("<span class='uncompleted'><li>" + task.descript + "</li></span>");
         $(".uncompleted").last().click(function() {
           task.done = "true";
-          $("ul#completed").append($(this).parent());
+          $("ul#completed").append($(this).children());
         });
       }
     });

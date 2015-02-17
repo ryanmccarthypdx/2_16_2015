@@ -11,7 +11,7 @@
   text-decoration: underline;
 }
 
-.uncompleted {
+#uncompleted {
   cursor: pointer;
   color: #0088cc;
 }
